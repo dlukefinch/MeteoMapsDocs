@@ -1,6 +1,6 @@
 ---
 seo:
-  title: Write beautiful docs with Markdown
+  title: Weather. Mapped.
   description: Ship fast, flexible, and SEO-optimized documentation with beautiful
     design out of the box. Docus brings together the best of the Nuxt ecosystem.
     Powered by Nuxt UI.
@@ -8,12 +8,10 @@ seo:
 
 ::u-page-hero
 #title
-Write beautiful docs with Markdown
+Use MeteoMaps like a Pro
 
 #description
 Ship fast, flexible, and SEO-optimized documentation with beautiful design out of the box.
-
-Docus brings the best of the Nuxt ecosystem into one CLI.
 
 #links
   :::u-button
