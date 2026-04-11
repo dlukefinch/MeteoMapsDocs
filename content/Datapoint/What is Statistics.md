@@ -1,6 +1,6 @@
 ---
-title: Getting Started with Statistics 
-description: A quick guide to our stats dashboard
+title: Getting Started with Datapoint 
+description: A quick guide to our MeteoMaps DataPoint 
 navigation:
   icon: i-lucide-house
 seo:
