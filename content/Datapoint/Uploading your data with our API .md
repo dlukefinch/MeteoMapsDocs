@@ -25,7 +25,7 @@ Content-Type: application/json
 
 Sign in to DataPoint in your browser. Open developer tools (`F12` on Windows / `Cmd+Option+I` on Mac) and go to **Application → Local Storage**. Click the entry containing `supabase` and locate the key ending in `auth-token`. Its value is a JSON object — copy the `access_token` string from inside it.
 
-> **Note:** Tokens expire after approximately 1 hour. For scheduled scripts, use the `refresh_token` to obtain a new `access_token` before each request via the Supabase Auth REST API (`POST /auth/v1/token?grant_type=refresh_token`).
+> **Note:** The `access_token` expires after approximately 1 hour, but the `refresh_token` is long-lived (60 days by default). For scheduled or daily/monthly scripts, store the `refresh_token` in a secure location (environment variable, secrets manager, etc.). Before each run, exchange it for a new `access_token` via `POST https://datapoint.meteomaps.com/auth/v1/token?grant_type=refresh_token` with body `{"refresh_token":"YOUR_REFRESH_TOKEN"}`. The response contains a new `access_token` **and** a new `refresh_token` — save the new refresh token to replace the old one. This chain means a script can run indefinitely without manual intervention, as long as it runs at least once every 60 days.
 
 ---
 
@@ -122,7 +122,7 @@ Click **File → Options → Customize Ribbon**. In the right-hand "Main Tabs" l
 
 Sign in to DataPoint in your browser. Press `F12`, go to **Application → Local Storage**, click the Supabase entry, and copy the `access_token` value from the JSON object stored there.
 
-> **Note:** Tokens expire after ~1 hour. If the macro returns an authentication error, re-copy a fresh token from the browser.
+> **Note:** The `access_token` expires after ~1 hour. If you run the macro within that window it will work without any changes. If it returns an authentication error, simply copy a fresh `access_token` from the browser and paste it back into line 2. For fully automated scheduled runs, see the refresh token approach described in Method 1 Step 1 — the same logic applies; store the `refresh_token` and exchange it for a new `access_token` before each run.
 
 ---
 
@@ -252,7 +252,7 @@ A dialog confirms success or shows the error message from the server.
 
 Sign in to DataPoint in your browser. Press `F12`, go to **Application → Local Storage**, click the Supabase entry, and copy the `access_token` value.
 
-> **Note:** Tokens expire after ~1 hour. For scheduled flows, you will need to refresh the token periodically.
+> **Note:** The `access_token` expires after ~1 hour, but the `refresh_token` lasts 60 days by default. For scheduled flows, add an HTTP action **before** the upload step that calls `POST https://datapoint.meteomaps.com/auth/v1/token?grant_type=refresh_token` with body `{"refresh_token":"YOUR_REFRESH_TOKEN"}`. Store the returned `access_token` in a variable for the upload request, and store the returned `refresh_token` in a Power Automate environment variable or Azure Key Vault to replace the previous one. This keeps the flow running indefinitely without manual token updates.
 
 ---
 
@@ -371,7 +371,7 @@ Open the Google Sheet containing your data. Click **Extensions → Apps Script**
 
 In another browser tab, sign in to DataPoint. Press `F12`, go to **Application → Local Storage**, click the Supabase entry, and copy the `access_token` value.
 
-> **Note:** Tokens expire after ~1 hour. If the script returns a 401 Unauthorized error, copy a fresh token from the browser.
+> **Note:** The `access_token` expires after ~1 hour. For one-off or manual runs this is fine — just re-copy a fresh token if you get a 401. For daily or monthly automated triggers (set up via **Extensions → Apps Script → Triggers**), store your `refresh_token` in `PropertiesService.getScriptProperties()` instead of hardcoding the `access_token`. Before each upload, call the refresh endpoint (`POST .../auth/v1/token?grant_type=refresh_token`), extract the new `access_token` and new `refresh_token` from the response, update the stored refresh token, and then proceed with the upload. The refresh token is valid for 60 days and is rotated on every use, so the script keeps working indefinitely.
 
 ---
 
