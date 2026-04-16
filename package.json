@@ -5,8 +5,9 @@
     "build": "nuxt build"
   },
   "dependencies": {
-    "docus": "latest",
     "better-sqlite3": "^12.6.2",
-    "nuxt": "^4.3.1"
+    "docus": "latest",
+    "nuxt": "^4.3.1",
+    "nuxt-studio": "^1.6.0"
   }
 }
