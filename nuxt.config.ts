@@ -1,21 +1,12 @@
 export default defineNuxtConfig({
   extends: ['docus'],
   modules: ['nuxt-studio'],
-  ssr: true,
-  nitro: {
-    prerender: {
-      crawlLinks: true
-    }
-  }
-})
-
-export default defineNuxtConfig({
-  extends: ['docus'],
-  modules: ['nuxt-studio'],
   studio: {
-    github: {
+    repository: {
+      provider: 'github',
       owner: 'dlukefinch',
-      repo: 'MeteoMapsDocs'
+      repo: 'MeteoMapsDocs',
+      branch: 'main'
     }
   },
   ssr: true,
