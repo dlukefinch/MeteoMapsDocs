@@ -12,7 +12,8 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     prerender: {
-      crawlLinks: true
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/robots.txt']
     }
   }
 })
