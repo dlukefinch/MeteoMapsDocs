@@ -3,6 +3,3 @@ export default defineNuxtConfig({
   modules: ['nuxt-studio'],
 })
 
-export default defineNuxtConfig({
-  modules: ['@nuxt/content']
-})
