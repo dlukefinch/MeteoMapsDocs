@@ -10,7 +10,7 @@ seo:
 
 ## Overview
 
-This application displays historical temperature data from the Central England Temperature (CET) record, the longest instrumental temperature series in the world dating back to 1659. Explore temperature trends through different views and interactive features.
+This application displays historical temperature data from the Central England Temperature (CET record, the longest instrumental temperature series in the world dating back to 1659. Explore temperature trends through different views and interactive features.
 
 ## Views
 
