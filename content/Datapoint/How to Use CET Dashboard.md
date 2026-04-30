@@ -3,9 +3,6 @@ title: How to use the CET Dashboard
 description: Guide on the controls and hidden features of our CET dashboard
 navigation:
   icon: i-lucide-house
-seo:
-  title: How to use the CET Dashboard
-  description: Guide on the controls and hidden features of our CET dashboard
 ---
 
 ## Overview
@@ -20,27 +17,27 @@ This application displays historical temperature data from the Central England T
 
 ## Keyboard Shortcuts
 
-| Action | Keys |
-|---|---|
-| Open / Close Help | `?` or `H` |
-| Close Help Modal | `Esc` |
-| Navigate Decades (Previous) | `←` or `↓` |
-| Navigate Decades (Next) | `→` or `↑` |
-| Jump to Recent Decade | `1` `2` `3` `4` `5` `6` `7` |
+| Action                      | Keys                        |
+| --------------------------- | --------------------------- |
+| Open / Close Help           | `?` or `H`                  |
+| Close Help Modal            | `Esc`                       |
+| Navigate Decades (Previous) | `←` or `↓`                  |
+| Navigate Decades (Next)     | `→` or `↑`                  |
+| Jump to Recent Decade       | `1` `2` `3` `4` `5` `6` `7` |
 
 > Number keys jump to recent decades (1960s–2020s). Use arrow keys or the dropdown for earlier periods.
 
 ### Quick Decade Reference
 
 | Key | Decade |
-|---|---|
-| `1` | 1960s |
-| `2` | 1970s |
-| `3` | 1980s |
-| `4` | 1990s |
-| `5` | 2000s |
-| `6` | 2010s |
-| `7` | 2020s |
+| --- | ------ |
+| `1` | 1960s  |
+| `2` | 1970s  |
+| `3` | 1980s  |
+| `4` | 1990s  |
+| `5` | 2000s  |
+| `6` | 2010s  |
+| `7` | 2020s  |
 
 For earlier decades (1650s–1950s), use the dropdown menu or arrow keys to navigate.
 
